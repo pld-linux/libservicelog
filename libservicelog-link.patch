@@ -1,0 +1,23 @@
+--- libservicelog-1.1.11/src/servicelog-1.pc.in.orig	2011-03-14 22:34:44.000000000 +0100
++++ libservicelog-1.1.11/src/servicelog-1.pc.in	2011-05-01 20:20:03.681759499 +0200
+@@ -6,5 +6,6 @@
+ Name: servicelog
+ Description: Library for access to the system servicelog
+ Version: @VERSION@
+-Libs: -L${libdir} -lsqlite3 -l@GENERIC_PACKAGE_NAME@
++Libs: -L${libdir} -l@GENERIC_PACKAGE_NAME@
++Libs.private: -lsqlite3 -lrtas -lrtasevent
+ Cflags: -I${includedir}/@GENERIC_PACKAGE_NAME@-@GENERIC_API_VERSION@
+--- libservicelog-1.1.11/src/Makefile.am.orig	2011-03-14 22:34:44.000000000 +0100
++++ libservicelog-1.1.11/src/Makefile.am	2011-05-01 20:26:36.195105975 +0200
+@@ -35,9 +35,9 @@
+ 
+ libservicelog_la_LDFLAGS = -module -version-info \
+ 	@GENERIC_API_VERSION@ -release @GENERIC_RELEASE@
++libservicelog_la_LIBADD = -lsqlite3 -lrtas -lrtasevent
+ 
+ AM_CFLAGS	= -Wall -g -DDEST_DIR='"${exec_prefix}"'
+-AM_LDFLAGS	= -lsqlite3 -lrtas -lrtasevent
+ 
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ libtool: $(LIBTOOL_DEPS)

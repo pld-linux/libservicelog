@@ -1,0 +1,11 @@
+--- libservicelog-1.1.11/configure.ac.orig	2011-03-14 22:34:44.000000000 +0100
++++ libservicelog-1.1.11/configure.ac	2011-05-01 12:34:16.077490378 +0200
+@@ -54,7 +54,7 @@
+ AC_SUBST(LIBTOOL_DEPS)
+ 
+ # Checks for libraries.
+-AC_CHECK_LIB([sqlite], [sqlite3_open sqlite3_exec sqlite3_close
++AC_CHECK_LIB([sqlite3], [sqlite3_open sqlite3_exec sqlite3_close
+ sqlite3_errmsg sqlite_prepare sqlite3_step sqlilte3_column_bytes
+ sqlite3_column_blob sqlite3_finalize sqlite3_bind_blob
+ sqlite3_last_insert_rowid])
