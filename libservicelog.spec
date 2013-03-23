@@ -1,15 +1,14 @@
 Summary:	Library for access to the system servicelog
 Summary(pl.UTF-8):	Biblioteka dostępu do logu zdarzeń serwisowych w systemie
 Name:		libservicelog
-Version:	1.1.11
+Version:	1.1.12
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/linux-diag/%{name}-%{version}.tar.gz
-# Source0-md5:	7a65aa1fd1b524f8878b256f1527ca9a
-Patch0:		%{name}-sqlite3.patch
-Patch1:		%{name}-link.patch
-Patch2:		%{name}-install.patch
+# Source0-md5:	0e40890ade6dc74e0d4f743ed108bfb1
+Patch0:		%{name}-link.patch
+Patch1:		%{name}-install.patch
 URL:		http://linux-diag.sourceforge.net/servicelog/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -63,7 +62,6 @@ Statyczna biblioteka servicelog.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 %{__libtoolize}
@@ -92,14 +90,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_libdir}/libservicelog-1.1.so.*.*.*
 %ghost %{_libdir}/libservicelog-1.1.so.1
 %dir /var/lib/servicelog
 
 %files devel
 %defattr(644,root,root,755)
-%doc STATUS
 %attr(755,root,root) %{_libdir}/libservicelog.so
 %{_includedir}/servicelog-1
 %{_pkgconfigdir}/servicelog-1.pc
