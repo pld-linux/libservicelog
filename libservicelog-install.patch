@@ -1,10 +1,10 @@
---- libservicelog-1.1.11/Makefile.am.orig	2011-03-14 22:34:44.000000000 +0100
-+++ libservicelog-1.1.11/Makefile.am	2011-05-01 20:20:27.528426964 +0200
-@@ -17,7 +17,3 @@
- 
- library_includedir = ${includedir}/servicelog-1/
- library_include_HEADERS = servicelog-1/servicelog.h servicelog-1/libservicelog.h
+--- libservicelog-1.1.15/Makefile.am.orig	2015-07-01 21:59:50.081333602 +0200
++++ libservicelog-1.1.15/Makefile.am	2015-07-01 22:01:42.041328904 +0200
+@@ -47,7 +47,3 @@
+ LIBTOOL_DEPS = @LIBTOOL_DEPS@
+ libtool: $(LIBTOOL_DEPS)
+ 	$(SHELL) ./config.status --recheck
 -
 -install-exec-hook:
--	install -D --mode=754 --group=service servicelog.db \
+-	install -D --mode=754 servicelog.db \
 -		${DESTDIR}/var/lib/servicelog/servicelog.db

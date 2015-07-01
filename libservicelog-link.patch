@@ -8,16 +8,21 @@
 +Libs: -L${libdir} -l@GENERIC_PACKAGE_NAME@
 +Libs.private: -lsqlite3 -lrtas -lrtasevent
  Cflags: -I${includedir}/@GENERIC_PACKAGE_NAME@-@GENERIC_API_VERSION@
---- libservicelog-1.1.11/src/Makefile.am.orig	2011-03-14 22:34:44.000000000 +0100
-+++ libservicelog-1.1.11/src/Makefile.am	2011-05-01 20:26:36.195105975 +0200
-@@ -35,9 +35,9 @@
+--- libservicelog-1.1.15/Makefile.am.orig	2015-07-01 21:59:11.414668558 +0200
++++ libservicelog-1.1.15/Makefile.am	2015-07-01 21:59:15.924668369 +0200
+@@ -19,7 +19,6 @@
+ 
+ #AM_CPPFLAGS	= -I.. -I./servicelog-1/
+ AM_CFLAGS	= -Wall -g -I.. -I./servicelog-1 -DDEST_DIR='"${exec_prefix}"'
+-AM_LDFLAGS	= -lsqlite3 -lrtas -lrtasevent
+ 
+ library_include_HEADERS = servicelog-1/servicelog.h servicelog-1/libservicelog.h
+ noinst_HEADERS = src/slog_internal.h
+@@ -43,6 +42,7 @@
  
  libservicelog_la_LDFLAGS = -module -version-info \
  	@GENERIC_API_VERSION@ -release @GENERIC_RELEASE@
 +libservicelog_la_LIBADD = -lsqlite3 -lrtas -lrtasevent
- 
- AM_CFLAGS	= -Wall -g -DDEST_DIR='"${exec_prefix}"'
--AM_LDFLAGS	= -lsqlite3 -lrtas -lrtasevent
  
  LIBTOOL_DEPS = @LIBTOOL_DEPS@
  libtool: $(LIBTOOL_DEPS)
