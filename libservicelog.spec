@@ -1,12 +1,12 @@
 Summary:	Library for access to the system servicelog
 Summary(pl.UTF-8):	Biblioteka dostępu do logu zdarzeń serwisowych w systemie
 Name:		libservicelog
-Version:	1.1.15
+Version:	1.1.16
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/linux-diag/%{name}-%{version}.tar.gz
-# Source0-md5:	be1fecbcb5df2d4d3d9b3ebcd6eacaf3
+# Source0-md5:	8b357e23aa24bcc936be7b8693b5731f
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-install.patch
 URL:		http://linux-diag.sourceforge.net/servicelog/
