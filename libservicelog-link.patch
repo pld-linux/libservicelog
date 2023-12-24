@@ -8,9 +8,9 @@
 +Libs: -L${libdir} -l@GENERIC_PACKAGE_NAME@
 +Libs.private: -lsqlite3 -lrtas -lrtasevent
  Cflags: -I${includedir}/@GENERIC_PACKAGE_NAME@-@GENERIC_API_VERSION@
---- libservicelog-1.1.15/Makefile.am.orig	2015-07-01 21:59:11.414668558 +0200
-+++ libservicelog-1.1.15/Makefile.am	2015-07-01 21:59:15.924668369 +0200
-@@ -19,7 +19,6 @@
+--- libservicelog-1.1.19/Makefile.am.orig	2021-05-26 09:56:33.000000000 +0200
++++ libservicelog-1.1.19/Makefile.am	2023-12-24 08:43:59.478630383 +0100
+@@ -19,7 +19,6 @@ EXTRA_DIST = servicelog.db bootstrap.sh
  
  #AM_CPPFLAGS	= -I.. -I./servicelog-1/
  AM_CFLAGS	= -Wall -g -I.. -I./servicelog-1 -DDEST_DIR='"${exec_prefix}"'
@@ -18,11 +18,11 @@
  
  library_include_HEADERS = servicelog-1/servicelog.h servicelog-1/libservicelog.h
  noinst_HEADERS = src/slog_internal.h
-@@ -43,6 +42,7 @@
+@@ -43,6 +42,7 @@ AM_LFLAGS	= -Pv29nfy_ -olex.yy.c
  
  libservicelog_la_LDFLAGS = -module -version-info \
  	@GENERIC_API_VERSION@ -release @GENERIC_RELEASE@
 +libservicelog_la_LIBADD = -lsqlite3 -lrtas -lrtasevent
  
- LIBTOOL_DEPS = @LIBTOOL_DEPS@
- libtool: $(LIBTOOL_DEPS)
+ check_PROGRAMS = src/tests/test_libservicelog
+ src_tests_test_libservicelog_SOURCES = src/tests/test_libservicelog.c

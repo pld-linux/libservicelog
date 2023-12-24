@@ -1,16 +1,17 @@
 Summary:	Library for access to the system servicelog
 Summary(pl.UTF-8):	Biblioteka dostępu do logu zdarzeń serwisowych w systemie
 Name:		libservicelog
-Version:	1.1.18
+Version:	1.1.19
 Release:	1
 License:	LGPL v2+
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/linux-diag/%{name}-%{version}.tar.gz
-# Source0-md5:	8275e7d4d6922c7b7bdb3fe49271f949
+#Source0Download: https://github.com/power-ras/libservicelog/tags
+Source0:	https://github.com/power-ras/libservicelog/archive/v%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	0b2207b4451ac67c01ec1aa835ead999
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-install.patch
-URL:		http://linux-diag.sourceforge.net/servicelog/
-BuildRequires:	autoconf >= 2.59
+URL:		https://github.com/power-ras/libservicelog
+BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	flex
